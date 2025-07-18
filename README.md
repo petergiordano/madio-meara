@@ -20,13 +20,29 @@ MADIO (Modular AI Declarative Instruction and Orchestration) is a production-rea
 ## Project Structure
 
 ```
-/meara/
-├── analysis/                   # MEARA system analysis and capability mapping
-├── mapping/                    # Document-to-template conversion mapping
-├── madio_templates/           # Converted MADIO templates
-├── framework_enhancements/    # New template proposals and improvements
-├── implementation/            # Roadmaps and execution planning
-└── README.md                  # This file
+MADIO-MEARA/
+├── .claude/
+├── archive/
+├── docs/
+└── docs_framework/
+    ├── 00_project_system_instructions/
+    │   └── project_system_instructions.md
+    ├── 01_persona/
+    │   └── character_voice_authority.md
+    ├── 02_process_and_planning/
+    │   ├── methodology_framework.md
+    │   └── orchestrator.md
+    ├── 03_knowledge_base/
+    │   ├── competitive_intelligence_framework.md
+    │   ├── implementation_planning.md
+    │   └── root_cause_analysis_system.md
+    ├── 04_strategic_frameworks/
+    │   └── strategic_analysis_framework.md
+    ├── 05_rubrics/
+    │   └── unified_evaluation_framework.md
+    ├── 06_output_templates/
+    │   └── reporting_and_visualization.md
+    └── 07_html_templates/
 ```
 
 ## Project Status
