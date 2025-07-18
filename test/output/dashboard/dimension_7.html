@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechFlow Solutions Marketing Analysis</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="branding.css" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6f6f6; /* ScaleVP light grey background */
+        }
+        /* ScaleVP Brand Colors */
+        .scalevp-competent-bg { background-color: #e2eef5; }
+        .scalevp-competent-border { border-color: #6eaacb; }
+        .scalevp-competent-text { color: #0d71a9; }
+        .scalevp-needs-improvement-bg { background-color: #faeed1; }
+        .scalevp-needs-improvement-border { border-color: #efcb75; }
+        .scalevp-needs-improvement-text { color: #e5a819; }
+        
+        .bg-exceptional { background-color: #e5ecea; }
+        .border-exceptional { border-color: #7da399; }
+        .text-exceptional { color: #224f41; }
+
+        .bg-competent { background-color: #e2eef5; }
+        .border-competent { border-color: #6eaacb; }
+        .text-competent { color: #0d71a9; }
+
+        .bg-needs-improvement { background-color: #faeed1; }
+        .border-needs-improvement { border-color: #efcb75; }
+        .text-needs-improvement { color: #e5a819; }
+
+        .bg-critical { background-color: #fee2e2; }
+        .border-critical { border-color: #ef4444; }
+        .text-critical { color: #dc2626; }
+        
+        /* Custom scrollbar for modal content */
+        .modal-content-scrollable::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content-scrollable::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-content-scrollable::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .modal-content-scrollable::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+<div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
+<h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-center">Brand & Message Consistency</h1>
+<!-- Heat Map Status Banner -->
+<div class="bg-needs-improvement border-needs-improvement">
+<div class="flex items-center justify-center">
+<span class="text-2xl font-bold text-needs-improvement">Needs Work</span>
+</div>
+</div>
+<p class="text-lg text-gray-700 mb-6 text-center">
+            Explore the elements below to understand specific strengths and opportunities for HelloPatient's Market Positioning &amp; Messaging.
+        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+<!-- Cards will be dynamically inserted here -->
+</div>
+<!-- Modal for detailed view -->
+<div class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden" id="detailModal">
+<div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+<div class="p-6 border-b border-gray-200 flex justify-between items-center">
+<h2 class="text-2xl font-semibold text-gray-900" id="modalTitle"></h2>
+<button class="text-gray-500 hover:text-gray-700 text-3xl font-light leading-none" id="closeModal">×</button>
+</div>
+<div class="p-6 overflow-y-auto modal-content-scrollable flex-grow">
+<div class="mb-4">
+<h3 class="text-lg font-medium text-gray-800 mb-2">Strengths:</h3>
+<ul class="list-disc list-inside text-gray-700 space-y-1" id="modalStrengths"></ul>
+</div>
+<div class="mb-4">
+<h3 class="text-lg font-medium text-gray-800 mb-2">Opportunities:</h3>
+<ul class="list-disc list-inside text-gray-700 space-y-1" id="modalOpportunities"></ul>
+</div>
+<div>
+<h3 class="text-lg font-medium text-gray-800 mb-2">Examples:</h3>
+<p class="text-gray-700 italic" id="modalExamples"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-100">
+<h2 class="text-xl font-semibold text-gray-800 mb-3">Note on Cascading Effects:</h2>
+<p class="text-gray-700 mb-2">Issues in Market Positioning &amp; Messaging frequently cascade to affect multiple other dimensions:</p>
+<ul class="list-disc list-inside text-gray-700 space-y-1">
+<li>Generic value propositions often manifest in Competitive Positioning as weak differentiation.</li>
+<li>Unclear messaging typically impacts Digital Experience through confusing CTAs.</li>
+<li>Underdeveloped pain point articulation can affect Buyer Journey content relevance.</li>
+</ul>
+</div>
+<!-- Rating Key Section -->
+<div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-100">
+<h2 class="text-xl font-semibold text-gray-800 mb-3">Rating Key:</h2>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="block w-5 h-5 rounded-full bg-exceptional border border-exceptional"></span>
+<span class="text-exceptional font-semibold">Exceptional</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="block w-5 h-5 rounded-full bg-competent border border-competent"></span>
+<span class="text-competent font-semibold">Competent</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="block w-5 h-5 rounded-full bg-needs-improvement border border-needs-improvement"></span>
+<span class="text-needs-improvement font-semibold">Needs Improvement</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="block w-5 h-5 rounded-full bg-critical border border-critical"></span>
+<span class="text-critical font-semibold">Critical Gap</span>
+</div>
+</div>
+</div>
+<!-- Navigation Section -->
+<div class="mt-8 p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+<a class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2" href="index.html">
+                    ← Back to Heat Map
+                </a>
+<div class="flex items-center gap-2">
+<label class="text-gray-700 font-medium" for="dimensionSelect">Jump to:</label>
+<select class="bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="dimensionSelect">
+<option value="">Select dimension...</option>
+
+
+
+
+
+
+
+
+
+<option value="dimension_1.html" >Market Positioning & Messaging</option>
+<option value="dimension_2.html" >Buyer Journey Orchestration</option>
+<option value="dimension_3.html" >Market Presence & Visibility</option>
+<option value="dimension_4.html" >Audience Clarity & Segmentation</option>
+<option value="dimension_5.html" >Digital Experience Effectiveness</option>
+<option value="dimension_6.html" >Competitive Positioning & Defense</option>
+<option value="dimension_7.html" selected>Brand & Message Consistency</option>
+<option value="dimension_8.html" >Analytics & Measurement Framework</option>
+<option value="dimension_9.html" >AI-Specific Authenticity</option></select>
+</div>
+</div>
+<!-- Links to Detailed Research Documents -->
+<div class="mt-6 pt-6 border-t border-gray-200">
+<h3 class="text-lg font-semibold text-gray-800 mb-3 text-center">📋 Detailed Research Documents</h3>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center" href="#" target="_blank">
+                        🔍 Deep Research Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center" href="#" target="_blank">
+                        📊 Full Analysis Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+        const analysisData = [];
+
+        const cardsContainer = document.querySelector('.grid');
+        const detailModal = document.getElementById('detailModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalStrengths = document.getElementById('modalStrengths');
+        const modalOpportunities = document.getElementById('modalOpportunities');
+        const modalExamples = document.getElementById('modalExamples');
+
+
+        function getCardColor(rating) {
+            switch (rating) {
+                case 'Exceptional': return 'bg-green-100 border-green-300 text-green-800';
+                case 'Competent': return 'scalevp-competent-bg scalevp-competent-border scalevp-competent-text';
+                case 'Needs Improvement': return 'scalevp-needs-improvement-bg scalevp-needs-improvement-border scalevp-needs-improvement-text';
+                case 'Critical Gap': return 'bg-red-100 border-red-300 text-red-800';
+                default: return 'bg-gray-100 border-gray-300 text-gray-800';
+            }
+        }
+
+        analysisData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = `p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-[1.02] border ${getCardColor(item.Rating)}`;
+            card.innerHTML = `
+                <h3 class="text-lg font-semibold mb-1">${item.Element}</h3>
+                <p class="text-sm font-medium">Rating: <span class="font-bold">${item.Rating}</span></p>
+            `;
+            card.dataset.index = index;
+            cardsContainer.appendChild(card);
+
+            card.addEventListener('click', () => {
+                const selectedItem = analysisData[card.dataset.index];
+                modalTitle.textContent = selectedItem.Element;
+
+                modalStrengths.innerHTML = '';
+                selectedItem.Strengths.forEach(s => {
+                    const li = document.createElement('li');
+                    li.textContent = s;
+                    modalStrengths.appendChild(li);
+                });
+
+                modalOpportunities.innerHTML = '';
+                selectedItem.Opportunities.forEach(o => {
+                    const li = document.createElement('li');
+                    li.textContent = o;
+                    modalOpportunities.appendChild(li);
+                });
+
+                modalExamples.textContent = selectedItem.Examples.join('\n'); // Join examples with newline
+
+
+                detailModal.classList.remove('hidden');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            detailModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) {
+                detailModal.classList.add('hidden');
+            }
+        });
+
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation dropdown functionality with error handling
+            const dimensionSelect = document.getElementById('dimensionSelect');
+            
+            if (dimensionSelect) {
+                dimensionSelect.addEventListener('change', function(e) {
+                    try {
+                        if (this.value && this.value !== '') {
+                            // Small delay to prevent conflicts
+                            setTimeout(() => {
+                                window.location.href = this.value;
+                            }, 100);
+                        }
+                    } catch (error) {
+                        console.error('Navigation error:', error);
+                    }
+                });
+            }
+            
+            // Back button functionality with error handling
+            const backButton = document.querySelector('a[href="index.html"]');
+            if (backButton) {
+                backButton.addEventListener('click', function(e) {
+                    try {
+                        // Let the normal link behavior work
+                        return true;
+                    } catch (error) {
+                        console.error('Back button error:', error);
+                        e.preventDefault();
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

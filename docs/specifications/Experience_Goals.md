@@ -8,7 +8,7 @@ This document defines the **emotional and experiential goals** for the MEARA pro
 
 Our design is guided by three core documents. It is crucial to understand all three to make effective design decisions:
 
-1. [**SLC\_Principles.md**](https://www.google.com/search?q=./SLC_Principles.md): Defines **how** we approach building features (our process).  
+1. [**SLC_Principles.md**](https://www.google.com/search?q=./SLC_Principles.md): Defines **how** we approach building features (our process).  
 2. **This Document**: Defines **why** we are building and how users should feel (our emotional target).  
 3. [**ComponentLibrary.md**](https://www.google.com/search?q=./ComponentLibrary.md): Defines the **what**—the specific visual and structural components to use (our toolkit).
 
@@ -29,12 +29,12 @@ Our design is guided by three core documents. It is crucial to understand all th
 * **Vibe Drivers**:  
   * Simple command initiation builds confidence.  
   * Clear project overview shows the scope and expected output.  
-  * The system confirms the input Deep\_Research\_Brief is valid.
+  * The system confirms the input Deep_Research_Brief is valid.
 
 ### **⚡ During Processing**
 
 * **Target Emotion**: **Confidence & Trust.**  
-* **Feeling**: "The system is working perfectly \- I can see exactly what's happening and trust it won't break or stall."  
+* **Feeling**: "The system is working perfectly - I can see exactly what's happening and trust it won't break or stall."  
 * **Vibe Drivers**:  
   * Clear, informative status messages at each pipeline step.  
   * Fault-tolerant design with resume capability (a future goal for n8n).  
