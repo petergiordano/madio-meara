@@ -57,6 +57,41 @@ MADIO-MEARA/
 - `mapping/madio_template_requirements.md` - MADIO template selection and justification
 - `implementation/conversion_roadmap.md` - Phase-by-phase execution plan
 
+## Development Setup
+
+### Prerequisites
+- Python 3.7 or higher
+- Git
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/petergiordano/madio-meara.git
+   cd madio-meara
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Tools Usage
+The `tools/` directory contains utilities for working with HTML templates:
+
+- **sanitize_html_templates.py**: Full-featured script using BeautifulSoup for robust HTML parsing
+- **sanitize_html_templates_simple.py**: Lightweight regex-only version with no dependencies
+
+Run the sanitization tool:
+```bash
+python tools/sanitize_html_templates.py
+```
+
 ## Conversion Methodology
 
 This conversion follows the proven methodology used for the "Chronicles of Khronexia: Who Would Win" project, adapted for MEARA's marketing analysis complexity.
