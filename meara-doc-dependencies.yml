@@ -1,0 +1,39 @@
+DOCUMENT REFERENCE TRACKER:
+
+1. project_system_instructions
+   - References: orchestrator, comprehensive_methodology, unified_evaluation_framework, strategic_analysis_framework, all Tier 3 templates
+
+2. orchestrator
+   - References: All other templates (as central coordinator)
+   - Referenced by: All templates
+
+3. comprehensive_methodology
+   - References: unified_evaluation_framework, strategic_analysis_framework, root_cause_analysis_system
+   - Referenced by: orchestrator, all analysis templates
+
+4. unified_evaluation_framework (JUST CREATED)
+   - References: comprehensive_methodology, root_cause_analysis_system
+   - Referenced by: orchestrator, strategic_analysis_framework, reporting_and_visualization
+
+5. strategic_analysis_framework (TO CREATE)
+   - Should reference: comprehensive_methodology, unified_evaluation_framework, root_cause_analysis_system
+   - Referenced by: orchestrator, implementation_planning
+
+6. root_cause_analysis_system (TO CREATE)
+   - Should reference: unified_evaluation_framework, comprehensive_methodology
+   - Referenced by: orchestrator, strategic_analysis_framework, reporting_and_visualization
+
+7. reporting_and_visualization (ALREADY CREATED AS SEPARATE DOCS)
+   - Should reference: unified_evaluation_framework, root_cause_analysis_system, strategic_analysis_framework
+   - Referenced by: orchestrator
+
+8. implementation_planning (TO CREATE)
+   - Should reference: strategic_analysis_framework, unified_evaluation_framework
+   - Referenced by: orchestrator
+
+9. competitive_intelligence_framework (TO CREATE)
+   - Should reference: comprehensive_methodology, unified_evaluation_framework
+   - Referenced by: orchestrator, strategic_analysis_framework
+
+10. character_voice_authority (TO CREATE)
+    - Referenced by: orchestrator, project_system_instructions
