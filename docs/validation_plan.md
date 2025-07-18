@@ -1,5 +1,7 @@
 # validation_plan.md
 
+[Gemini 2.5 Pro Chat] (https://gemini.google.com/app/e8bb8649901a86fb)
+
 ## Necessary Context
 
 The **DeepStack - MEARA (Marketing Effectiveness Analysis Report Agent)** is a sophisticated AI designed to emulate a senior B2B SaaS marketing strategist, embodying the expertise of industry-leading CMOs.  Its primary function is to conduct a comprehensive marketing effectiveness analysis for a given company, delivering actionable insights and a clear implementation roadmap. 
@@ -60,7 +62,16 @@ There are three key problems to resolve:
 
 ---
 ## End Goal
-Find the right set and number of documents to strike the balance of performance, reliability, and maintainability. 
+Find the right set and number of MEARA documents to strike the balance of performance, reliability, and maintainability. 
+
+The guiding principle for this re-architecture is Separation of Concerns. Right now, your documents are highly coupled; a single concept is often defined, explained, and instructed across multiple files. We need to create a system where each document has a single, clear responsibility.
+
+
+---
+
+## Your Task:
+
+Provide me with a few options to achieve our end goal. The number one priority is the performance of the MEARA system to reliably produce accurate, insightful, and actionable analysis reports. I am willing to sacrafice a little more maintenance to achieve that priority.  
 
 ## Get Options from AI
 
