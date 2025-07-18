@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloPatient Market Presence Analysis</title>
+    <link href="branding.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* ScaleVP Brand Colors */
+        .bg-exceptional { background-color: #e5ecea; }
+        .border-exceptional { border-color: #7da399; }
+        .text-exceptional { color: #224f41; }
+
+        .bg-competent { background-color: #e2eef5; }
+        .border-competent { border-color: #6eaacb; }
+        .text-competent { color: #0d71a9; }
+
+        .bg-needs-improvement { background-color: #faeed1; }
+        .border-needs-improvement { border-color: #efcb75; }
+        .text-needs-improvement { color: #e5a819; }
+
+        .bg-critical { background-color: #fee2e2; }
+        .border-critical { border-color: #ef4444; }
+        .text-critical { color: #dc2626; }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 bg-neutral-light-grey">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-bold text-neutral-black mb-4 text-center">
+            Market Presence & Visibility Analysis
+        </h1>
+        
+        <!-- Heat Map Status Banner -->
+        <div class="bg-light-gold border-2 rounded-lg p-4 mb-6" style="border-color: #efcb75;">
+            <div class="flex items-center justify-center">
+                <span class="text-2xl font-bold text-primary-gold">Needs Improvement</span>
+            </div>
+        </div>
+        
+        <p class="text-lg text-neutral-black mb-6 text-center">
+            Explore the elements below to understand specific strengths and opportunities for HelloPatient's Market Presence & Visibility.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Modal for detailed view -->
+        <div id="detailModal" class="fixed inset-0 bg-neutral-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl font-semibold text-neutral-black"></h2>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-3xl font-light leading-none">&times;</button>
+                </div>
+                <div class="p-6 overflow-y-auto modal-content-scrollable flex-grow">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Strengths:</h3>
+                        <ul id="modalStrengths" class="list-disc list-inside text-neutral-black space-y-1"></ul>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Opportunities:</h3>
+                        <ul id="modalOpportunities" class="list-disc list-inside text-neutral-black space-y-1"></ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Examples:</h3>
+                        <p id="modalExamples" class="text-neutral-black italic"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-light-blue rounded-lg border border-gray-100">
+            <h2 class="text-xl font-semibold text-neutral-black mb-3">Note on Cascading Effects:</h2>
+            <ul class="list-disc list-inside text-neutral-black space-y-1">
+                <li>Poor search rankings often stem from Market Positioning weaknesses with unclear category alignment.</li>
+                <li>Limited third-party validation may connect to Competitive Positioning gaps.</li>
+                <li>Weak social proof typically relates to Brand Consistency issues across channels.</li>
+            </ul>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="mt-8 p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <a href="index.html" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2">
+                    ← Back to Heat Map
+                </a>
+                <div class="flex items-center gap-2">
+                    <label for="dimensionSelect" class="text-gray-700 font-medium">Jump to:</label>
+                    <select id="dimensionSelect" class="bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select dimension...</option>
+                        <option value="market-positioning-messaging-analysis.html">Market Positioning & Messaging</option>
+                        <option value="buyer-journey-orchestration-analysis.html">Buyer Journey Orchestration</option>
+                        <option value="market-presence-visibility-analysis.html">Market Presence & Visibility</option>
+                        <option value="audience-clarity-segmentation-analysis.html">Audience Clarity & Segmentation</option>
+                        <option value="digital-experience-effectiveness-analysis.html">Digital Experience Effectiveness</option>
+                        <option value="competitive-positioning-defense-analysis.html">Competitive Positioning & Defense</option>
+                        <option value="brand-message-consistency-analysis.html">Brand & Message Consistency</option>
+                        <option value="analytics-measurement-framework-analysis.html">Analytics & Measurement Framework</option>
+                        <option value="evaluation-of-ai-specific-authenticity-analysis.html">Evaluation of AI-Specific Authenticity</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Links to Detailed Research Documents -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 text-center">📋 Detailed Research Documents</h3>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://docs.google.com/document/d/1hwLpRl7Q_0akMUoe5EPrSLj1-YHRGjN-XhZD53IyAWU/edit" 
+                       target="_blank" 
+                       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                        🔍 Deep Research Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <a href="https://docs.google.com/document/d/1zriIMv_D3eDPaBGDvvki_qo2eTPKecsvXhseyZ_Ngzk/edit" 
+                       target="_blank" 
+                       class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                        📊 Full Analysis Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const analysisData = [
+            {
+                "Element": "Search Visibility",
+                "Rating": "Competent",
+                "Strengths": ["The meta title and description are well-crafted and optimized for search visibility, clearly stating the company name and core value proposition."],
+                "Opportunities": ["While on-page SEO is strong, the absence of JSON-LD structured data means the site is not providing explicit structured data hints to search engines for rich snippets or enhanced search results, limiting advanced visibility."],
+                "Examples": ["\"The meta title is 'Hello Patient | AI-powered healthcare communication'.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Meta Title, Fact]. \"No JSON-LD structured data scripts were detected.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Structured Data (JSON-LD), Fact]"]
+            },
+            {
+                "Element": "AI Engine Optimization & Recommendation Readiness",
+                "Rating": "Needs Improvement",
+                "Strengths": ["HelloPatient's clear and well-structured H1/H2 tags aid in machine understanding of content."],
+                "Opportunities": ["The complete absence of JSON-LD structured data significantly hinders AI engines' semantic understanding, potentially leading to less precise or less prominent AI-driven recommendations."],
+                "Examples": ["\"The variety and descriptive nature of the H2 tags demonstrate a well-structured content hierarchy...\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Heading Tags (H1, H2 Sample), Implication for GTM Intelligence]. \"No JSON-LD structured data scripts were detected.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Structured Data (JSON-LD), Fact]"]
+            },
+            {
+                "Element": "Third-Party Validation",
+                "Rating": "Needs Improvement",
+                "Strengths": ["100% alt text coverage on sampled images is an excellent signal for accessibility and reflects attention to detail, which can indirectly build trust."],
+                "Opportunities": ["There is no visible evidence of extensive reviews across platforms (like G2, Capterra) with strong ratings or prominent case studies, indicating limited third-party validation."],
+                "Examples": ["\"Out of 20 sampled images, all 20 had alternative (alt) text.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.C User Experience and Website Performance Clues, Image Alt Text Accessibility, Fact]"]
+            },
+            {
+                "Element": "Media & Analyst Coverage",
+                "Rating": "Needs Improvement",
+                "Strengths": ["N/A"],
+                "Opportunities": ["There is no visible evidence of regular, substantive coverage in industry publications or analyst reports, suggesting limited external validation beyond their own channels."],
+                "Examples": ["\"No specific advanced MarTech indicators (beyond the core stack) were identified by the Collector in this scan.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.E Competitive Posture and Strategic Tests, Advanced MarTech Indicators, Fact] (Note: Advanced MarTech often supports PR/Analyst relations)."]
+            },
+            {
+                "Element": "Social Proof Diversity",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The presence of a consent preferences form suggests adherence to privacy settings, which can be a positive trust signal."],
+                "Opportunities": ["The website fails to leverage or make visible documented past successes, well-received historical initiatives, or highly positive historical community feedback as prominent social proof."],
+                "Examples": ["\"Another form with ID 'email-form' is a consent preferences form with 'analytics' checkboxes and a 'Save Preferences' submit button.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Fact]"]
+            },
+            {
+                "Element": "Digital Footprint Breadth",
+                "Rating": "Competent",
+                "Strengths": ["The website is mobile-friendly and uses multiple CDNs, indicating a solid foundational digital footprint."],
+                "Opportunities": ["While the website is strong, there is no explicit evidence from the provided data of active presence across multiple relevant channels (e.g., robust LinkedIn engagement, active YouTube channel) beyond the core website."],
+                "Examples": ["\"The viewport meta tag content is width=device-width, initial-scale=1.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.C User Experience and Website Performance Clues, Viewport Configuration, Fact]. \"The use of multiple reputable CDNs...indicates a strong focus on website performance...\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.C User Experience and Website Performance Clues, CDN Usage, Fact]"]
+            },
+            {
+                "Element": "Community Engagement",
+                "Rating": "Needs Improvement",
+                "Strengths": ["N/A"],
+                "Opportunities": ["There is no visible evidence of a vibrant community with active discussion or peer-to-peer engagement, representing a missed opportunity for organic advocacy."],
+                "Examples": ["\"No specific client-side conversion events (like common ad pixel events) were identified by the Collector on this page.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Identified Conversion Events, Fact] (Note: Community engagement often involves trackable events)."]
+            },
+            {
+                "Element": "Competitive Ad Defense",
+                "Rating": "Needs Improvement",
+                "Strengths": ["N/A"],
+                "Opportunities": ["There is no visible evidence of a strong branded search presence with active monitoring or mitigation against competitor ad encroachment on primary branded keywords."],
+                "Examples": ["\"The absence of identified cookie consent management tools is notable. This could mean consent is managed via a custom solution, server-side, or is an area where the company might need to enhance its compliance posture...\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.A Marketing Technology and Data Foundation, Cookie Consent Mechanisms, Implication for GTM Intelligence] (Note: This is an indirect indicator of a lack of comprehensive digital defense)."]
+            },
+            {
+                "Element": "Review Platform Optimization",
+                "Rating": "Needs Improvement",
+                "Strengths": ["N/A"],
+                "Opportunities": ["There is no visible presence on key review platforms like G2 or Capterra, despite the product category likely having established review sites commonly used by buyers."],
+                "Examples": ["\"No specific advanced MarTech indicators (beyond the core stack) were identified by the Collector in this scan.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.E Competitive Posture and Strategic Tests, Advanced MarTech Indicators, Fact] (Note: Advanced MarTech often includes review management tools)."]
+            },
+            {
+                "Element": "Business Outcome Focus",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The H1 \"Run leaner. Grow faster. Deliver better care.\" implies a focus on business outcomes."],
+                "Opportunities": ["Recommendations for improving market presence need to be more directly tied to quantifiable revenue, growth, or competitive metrics."],
+                "Examples": ["\"The primary H1 tag is 'Run leaner. Grow faster. Deliver better care.'\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Heading Tags (H1, H2 Sample), Fact]"]
+            },
+            {
+                "Element": "Specificity & Actionability",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The meta title is specific in its focus on \"AI-powered healthcare communication.\""],
+                "Opportunities": ["Actions to improve market presence and visibility need to be more detailed and specific, with clear ownership and timelines for implementing structured data, review platform strategies, and broader digital footprint expansion."],
+                "Examples": ["\"Hello Patient | AI-powered healthcare communication\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Meta Title, Fact]"]
+            },
+            {
+                "Element": "Resource Calibration",
+                "Rating": "Competent",
+                "Strengths": ["The current foundational digital footprint (strong on-page SEO, CDNs) suggests a calibrated use of existing resources."],
+                "Opportunities": ["Implementing a comprehensive market presence strategy with advanced AEO, third-party validation, and competitive ad defense will require significant resource calibration and investment."],
+                "Examples": ["\"The current client-side MarTech stack appears lean.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.E Competitive Posture and Strategic Tests, Advanced MarTech Indicators, Implication for GTM Intelligence]"]
+            },
+            {
+                "Element": "Prioritization Logic",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The focus on basic search visibility (meta data, H1/H2) shows a foundational prioritization."],
+                "Opportunities": ["The prioritization logic needs to explicitly account for the critical importance of AI Engine Optimization, third-party validation, and competitive defense to secure future market presence."],
+                "Examples": ["\"The meta title is well-crafted, clearly stating the company name and its core value proposition...This is optimized for search visibility and user clarity...\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Meta Title, Implication for GTM Intelligence]"]
+            }
+        ];
+
+        const cardsContainer = document.querySelector('.grid');
+        const detailModal = document.getElementById('detailModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalStrengths = document.getElementById('modalStrengths');
+        const modalOpportunities = document.getElementById('modalOpportunities');
+        const modalExamples = document.getElementById('modalExamples');
+
+
+        function getCardColor(rating) {
+            switch (rating) {
+                case 'Exceptional': return 'bg-light-green border-green-300 text-dark-green';
+                case 'Competent': return 'bg-light-blue text-primary-blue border-2';
+                case 'Needs Improvement': return 'bg-light-gold text-primary-gold border-2';
+                case 'Critical Gap': return 'bg-red-100 border-red-300 text-red-800';
+                default: return 'bg-neutral-light-grey border-gray-300 text-neutral-black';
+            }
+        }
+
+        analysisData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = `p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-[1.02] border ${getCardColor(item.Rating)}`;
+            
+            // Add proper border color based on rating
+            if (item.Rating === 'Competent') {
+                card.style.borderColor = '#6eaacb';
+            } else if (item.Rating === 'Needs Improvement') {
+                card.style.borderColor = '#efcb75';
+            }
+            
+            card.innerHTML = `
+                <h3 class="text-lg font-semibold mb-1">${item.Element}</h3>
+                <p class="text-sm font-medium">Rating: <span class="font-bold">${item.Rating}</span></p>
+            `;
+            card.dataset.index = index;
+            cardsContainer.appendChild(card);
+
+            card.addEventListener('click', () => {
+                const selectedItem = analysisData[card.dataset.index];
+                modalTitle.textContent = selectedItem.Element;
+
+                modalStrengths.innerHTML = '';
+                selectedItem.Strengths.forEach(s => {
+                    const li = document.createElement('li');
+                    li.textContent = s;
+                    modalStrengths.appendChild(li);
+                });
+
+                modalOpportunities.innerHTML = '';
+                selectedItem.Opportunities.forEach(o => {
+                    const li = document.createElement('li');
+                    li.textContent = o;
+                    modalOpportunities.appendChild(li);
+                });
+
+                modalExamples.textContent = selectedItem.Examples.join('\n'); // Join examples with newline
+
+
+                detailModal.classList.remove('hidden');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            detailModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) {
+                detailModal.classList.add('hidden');
+            }
+        });
+
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation dropdown functionality with error handling
+            const dimensionSelect = document.getElementById('dimensionSelect');
+            
+            if (dimensionSelect) {
+                dimensionSelect.addEventListener('change', function(e) {
+                    try {
+                        if (this.value && this.value !== '') {
+                            // Small delay to prevent conflicts
+                            setTimeout(() => {
+                                window.location.href = this.value;
+                            }, 100);
+                        }
+                    } catch (error) {
+                        console.error('Navigation error:', error);
+                    }
+                });
+            }
+            
+            // Back button functionality with error handling
+            const backButton = document.querySelector('a[href="index.html"]');
+            if (backButton) {
+                backButton.addEventListener('click', function(e) {
+                    try {
+                        // Let the normal link behavior work
+                        return true;
+                    } catch (error) {
+                        console.error('Back button error:', error);
+                        e.preventDefault();
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloPatient Buyer Journey Analysis</title>
+    <link href="branding.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* ScaleVP Brand Colors */
+        .bg-exceptional { background-color: #e5ecea; }
+        .border-exceptional { border-color: #7da399; }
+        .text-exceptional { color: #224f41; }
+
+        .bg-competent { background-color: #e2eef5; }
+        .border-competent { border-color: #6eaacb; }
+        .text-competent { color: #0d71a9; }
+
+        .bg-needs-improvement { background-color: #faeed1; }
+        .border-needs-improvement { border-color: #efcb75; }
+        .text-needs-improvement { color: #e5a819; }
+
+        .bg-critical { background-color: #fee2e2; }
+        .border-critical { border-color: #ef4444; }
+        .text-critical { color: #dc2626; }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 bg-neutral-light-grey">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-bold text-neutral-black mb-4 text-center">
+            Buyer Journey Orchestration Analysis
+        </h1>
+        
+        <!-- Heat Map Status Banner -->
+        <div class="bg-light-gold border-2 rounded-lg p-4 mb-6" style="border-color: #efcb75;">
+            <div class="flex items-center justify-center">
+                <span class="text-2xl font-bold text-primary-gold">Needs Improvement</span>
+            </div>
+        </div>
+        
+        <p class="text-lg text-neutral-black mb-6 text-center">
+            Explore the elements below to understand specific strengths and opportunities for HelloPatient's Buyer Journey Orchestration.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Modal for detailed view -->
+        <div id="detailModal" class="fixed inset-0 bg-neutral-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl font-semibold text-neutral-black"></h2>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-3xl font-light leading-none">&times;</button>
+                </div>
+                <div class="p-6 overflow-y-auto modal-content-scrollable flex-grow">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Strengths:</h3>
+                        <ul id="modalStrengths" class="list-disc list-inside text-neutral-black space-y-1"></ul>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Opportunities:</h3>
+                        <ul id="modalOpportunities" class="list-disc list-inside text-neutral-black space-y-1"></ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-neutral-black mb-2">Examples:</h3>
+                        <p id="modalExamples" class="text-neutral-black italic"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-light-blue rounded-lg border border-gray-100">
+            <h2 class="text-xl font-semibold text-neutral-black mb-3">Note on Cascading Effects:</h2>
+            <ul class="list-disc list-inside text-neutral-black space-y-1">
+                <li>Missing middle-funnel content may reflect Audience Clarity gaps in understanding prospect needs.</li>
+                <li>Conversion friction often relates to Digital Experience issues with CTA design or page flow.</li>
+                <li>Lack of role-specific content typically connects to Audience Clarity & Segmentation weaknesses.</li>
+            </ul>
+        </div>
+
+        <!-- Rating Key Section -->
+        <div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-800 mb-3">Rating Key:</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm font-medium">
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-exceptional border border-exceptional"></span>
+                    <span class="text-exceptional font-semibold">Exceptional</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-competent border border-competent"></span>
+                    <span class="text-competent font-semibold">Competent</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-needs-improvement border border-needs-improvement"></span>
+                    <span class="text-needs-improvement font-semibold">Needs Improvement</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-critical border border-critical"></span>
+                    <span class="text-critical font-semibold">Critical Gap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="mt-8 p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <a href="index.html" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2">
+                    ← Back to Heat Map
+                </a>
+                <div class="flex items-center gap-2">
+                    <label for="dimensionSelect" class="text-gray-700 font-medium">Jump to:</label>
+                    <select id="dimensionSelect" class="bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select dimension...</option>
+                        <option value="market-positioning-messaging-analysis.html">Market Positioning & Messaging</option>
+                        <option value="buyer-journey-orchestration-analysis.html">Buyer Journey Orchestration</option>
+                        <option value="market-presence-visibility-analysis.html">Market Presence & Visibility</option>
+                        <option value="audience-clarity-segmentation-analysis.html">Audience Clarity & Segmentation</option>
+                        <option value="digital-experience-effectiveness-analysis.html">Digital Experience Effectiveness</option>
+                        <option value="competitive-positioning-defense-analysis.html">Competitive Positioning & Defense</option>
+                        <option value="brand-message-consistency-analysis.html">Brand & Message Consistency</option>
+                        <option value="analytics-measurement-framework-analysis.html">Analytics & Measurement Framework</option>
+                        <option value="evaluation-of-ai-specific-authenticity-analysis.html">Evaluation of AI-Specific Authenticity</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Links to Detailed Research Documents -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 text-center">📋 Detailed Research Documents</h3>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://docs.google.com/document/d/1hwLpRl7Q_0akMUoe5EPrSLj1-YHRGjN-XhZD53IyAWU/edit" 
+                       target="_blank" 
+                       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                        🔍 Deep Research Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <a href="https://docs.google.com/document/d/1zriIMv_D3eDPaBGDvvki_qo2eTPKecsvXhseyZ_Ngzk/edit" 
+                       target="_blank" 
+                       class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                        📊 Full Analysis Report
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const analysisData = [
+            {
+                "Element": "Awareness Stage Content",
+                "Rating": "Competent",
+                "Strengths": ["The meta description introduces \"Mia\" and outlines benefits, serving as an effective entry point for problem recognition."],
+                "Opportunities": ["While the meta description is strong, there isn't extensive, diverse content specifically tailored for broad awareness-stage problem recognition across different personas."],
+                "Examples": ["\"Meet Mia. The healthcare AI assistant that perfectly times automated calls and texts, boosts efficiency, and improves patient communication.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Meta Description, Fact]"]
+            },
+            {
+                "Element": "Consideration Stage Resources",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The website's H2 tags break down the offering into digestible sections, which can aid in understanding during the consideration phase."],
+                "Opportunities": ["There is a lack of comprehensive resources (e.g., comparison guides, ROI calculators, detailed whitepapers) that help buyers evaluate options and build a business case."],
+                "Examples": ["\"Sample H2 tags include: 'Experience a live call (or text) with Mia, our AI agent', 'Prefer to text? Mia does that, too.', 'Seamlessly integrates with your EHR and CRM'.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Heading Tags (H1, H2 Sample), Fact]"]
+            },
+            {
+                "Element": "Decision Facilitation",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The \"Text Me\" form offers a direct, low-friction path for engagement, which can facilitate decision-making for mobile-first users."],
+                "Opportunities": ["The site lacks sophisticated tools or content specifically designed to support consensus building within a buying committee or to reduce friction in the final decision stage beyond basic lead capture."],
+                "Examples": ["\"One form with ID 'text-me-form' uses a tel input for phone number and a submit button 'Text Me', with an associated consent checkbox.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Fact]"]
+            },
+            {
+                "Element": "Engagement Diversity",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The presence of two distinct forms (\"Text Me\" and consent preferences) indicates direct user engagement opportunities on the page."],
+                "Opportunities": ["There are limited low-friction engagement options for early-stage prospects (e.g., newsletter sign-ups, resource downloads, webinars) beyond high-commitment demo requests or simple text capture."],
+                "Examples": ["\"Two forms were detected on the page.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Fact]"]
+            },
+            {
+                "Element": "Lead Capture Strategy",
+                "Rating": "Competent",
+                "Strengths": ["The \"Text Me\" form is strategically placed for mobile engagement, offering a clear lead capture mechanism with an associated consent checkbox."],
+                "Opportunities": ["While lead capture exists, there's an opportunity to optimize the value exchange for different lead magnets and ensure clear next steps for various engagement types."],
+                "Examples": ["\"The 'text-me-form' with a telephone input and consent checkbox suggests a direct lead capture mechanism for mobile engagement, which is a clear GTM conversion path.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Implication for GTM Intelligence]"]
+            },
+            {
+                "Element": "Buying Committee Support",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The website's structured content (H1/H2) can help different stakeholders find relevant information."],
+                "Opportunities": ["There is limited content or tools specifically designed for different roles within a B2B buying committee (e.g., IT, Finance, Operations), and no visible resources to help internal champions."],
+                "Examples": ["\"The variety and descriptive nature of the H2 tags demonstrate a well-structured content hierarchy, breaking down the page into digestible sections and covering various aspects of their offering and benefits.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Heading Tags (H1, H2 Sample), Implication for GTM Intelligence]"]
+            },
+            {
+                "Element": "Nurture & Reengagement",
+                "Rating": "Critical Gap",
+                "Strengths": ["N/A"],
+                "Opportunities": ["There is no visible nurture or reengagement strategy (e.g., email sequences, retargeting) beyond initial lead capture, indicating a significant gap in guiding prospects through the funnel."],
+                "Examples": ["\"No specific client-side conversion events (like common ad pixel events) were identified by the Collector on this page.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Identified Conversion Events, Fact]"]
+            },
+            {
+                "Element": "Business Outcome Focus",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The H1 \"Run leaner. Grow faster. Deliver better care.\" implies a focus on business outcomes."],
+                "Opportunities": ["Recommendations for improving the buyer journey need to be more directly tied to quantifiable revenue, growth, or competitive metrics."],
+                "Examples": ["\"The primary H1 tag is 'Run leaner. Grow faster. Deliver better care.'\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.B Organic Presence and Content Signals, Heading Tags (H1, H2 Sample), Fact]"]
+            },
+            {
+                "Element": "Specificity & Actionability",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The \"Text Me\" form is a specific and actionable engagement point."],
+                "Opportunities": ["Actions to improve the buyer journey need to be more detailed and specific, with clear ownership and timelines for broader implementation."],
+                "Examples": ["\"The 'text-me-form' with a telephone input and consent checkbox suggests a direct lead capture mechanism for mobile engagement...\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Implication for GTM Intelligence]"]
+            },
+            {
+                "Element": "Resource Calibration",
+                "Rating": "Competent",
+                "Strengths": ["The current setup with foundational forms suggests a calibrated approach to resource allocation for lead capture."],
+                "Opportunities": ["Implementing a comprehensive nurture strategy and developing committee-specific content will require significant resource calibration and investment."],
+                "Examples": ["\"Two distinct forms are present for user engagement.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Implication for GTM Intelligence]"]
+            },
+            {
+                "Element": "Prioritization Logic",
+                "Rating": "Needs Improvement",
+                "Strengths": ["The presence of lead capture forms shows a basic prioritization of conversion."],
+                "Opportunities": ["The prioritization logic needs to explicitly address the gaps in middle-funnel content and multi-stakeholder support to optimize the full buyer journey."],
+                "Examples": ["\"Two forms were detected on the page.\" [Source: HelloPatient - deepstack L3 Ground Truth report, 3.D Conversion and Funnel Effectiveness, Forms Analysis, Fact]"]
+            }
+        ];
+
+        const cardsContainer = document.querySelector('.grid');
+        const detailModal = document.getElementById('detailModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalStrengths = document.getElementById('modalStrengths');
+        const modalOpportunities = document.getElementById('modalOpportunities');
+        const modalExamples = document.getElementById('modalExamples');
+
+
+        function getCardColor(rating) {
+            switch (rating) {
+                case 'Exceptional': return 'bg-light-green border-green-300 text-dark-green';
+                case 'Competent': return 'bg-light-blue text-primary-blue border-2';
+                case 'Needs Improvement': return 'bg-light-gold text-primary-gold border-2';
+                case 'Critical Gap': return 'bg-red-100 border-red-300 text-red-800';
+                default: return 'bg-neutral-light-grey border-gray-300 text-neutral-black';
+            }
+        }
+
+        analysisData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = `p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-[1.02] border ${getCardColor(item.Rating)}`;
+            
+            // Add proper border color based on rating
+            if (item.Rating === 'Competent') {
+                card.style.borderColor = '#6eaacb';
+            } else if (item.Rating === 'Needs Improvement') {
+                card.style.borderColor = '#efcb75';
+            }
+            
+            card.innerHTML = `
+                <h3 class="text-lg font-semibold mb-1">${item.Element}</h3>
+                <p class="text-sm font-medium">Rating: <span class="font-bold">${item.Rating}</span></p>
+            `;
+            card.dataset.index = index;
+            cardsContainer.appendChild(card);
+
+            card.addEventListener('click', () => {
+                const selectedItem = analysisData[card.dataset.index];
+                modalTitle.textContent = selectedItem.Element;
+
+                modalStrengths.innerHTML = '';
+                selectedItem.Strengths.forEach(s => {
+                    const li = document.createElement('li');
+                    li.textContent = s;
+                    modalStrengths.appendChild(li);
+                });
+
+                modalOpportunities.innerHTML = '';
+                selectedItem.Opportunities.forEach(o => {
+                    const li = document.createElement('li');
+                    li.textContent = o;
+                    modalOpportunities.appendChild(li);
+                });
+
+                modalExamples.textContent = selectedItem.Examples.join('\n'); // Join examples with newline
+
+
+                detailModal.classList.remove('hidden');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            detailModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) {
+                detailModal.classList.add('hidden');
+            }
+        });
+
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation dropdown functionality with error handling
+            const dimensionSelect = document.getElementById('dimensionSelect');
+            
+            if (dimensionSelect) {
+                dimensionSelect.addEventListener('change', function(e) {
+                    try {
+                        if (this.value && this.value !== '') {
+                            // Small delay to prevent conflicts
+                            setTimeout(() => {
+                                window.location.href = this.value;
+                            }, 100);
+                        }
+                    } catch (error) {
+                        console.error('Navigation error:', error);
+                    }
+                });
+            }
+            
+            // Back button functionality with error handling
+            const backButton = document.querySelector('a[href="index.html"]');
+            if (backButton) {
+                backButton.addEventListener('click', function(e) {
+                    try {
+                        // Let the normal link behavior work
+                        return true;
+                    } catch (error) {
+                        console.error('Back button error:', error);
+                        e.preventDefault();
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

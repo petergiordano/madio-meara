@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloPatient Overall Marketing Heat Map</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="branding.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6f6f6; /* ScaleVP light grey */
+        }
+        .rating-card {
+            padding: 1.5rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: all 0.2s ease-in-out;
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            align-items: center;
+            text-align: center;
+            cursor: pointer; /* Make cards clickable */
+        }
+        .rating-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg */
+            transform: scale(1.02); /* hover:scale-[1.02] */
+        }
+        /* ScaleVP Brand Colors */
+        .bg-exceptional { background-color: #e5ecea; } /* Light green */
+        .border-exceptional { border-color: #7da399; } /* Medium green */
+        .text-exceptional { color: #224f41; } /* Dark green */
+
+        .bg-competent { background-color: #e2eef5; } /* Light blue */
+        .border-competent { border-color: #6eaacb; } /* Medium blue */
+        .text-competent { color: #0d71a9; } /* Primary blue */
+
+        .bg-needs-improvement { background-color: #faeed1; } /* Light gold */
+        .border-needs-improvement { border-color: #efcb75; } /* Medium gold */
+        .text-needs-improvement { color: #e5a819; } /* Primary gold */
+
+        .bg-critical { background-color: #fee2e2; } /* Light red - keeping for critical */
+        .border-critical { border-color: #ef4444; } /* Medium red */
+        .text-critical { color: #dc2626; } /* Dark red */
+
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-center">
+            HelloPatient: Overall Marketing Effectiveness Heat Map
+        </h1>
+        <p class="text-lg text-gray-700 mb-6 text-center">
+            This heat map provides a high-level overview of HelloPatient's marketing performance across nine key dimensions.
+            Colors indicate the overall rating for each area, guiding your attention to strengths and opportunities.
+        </p>
+        
+        <!-- Links to Detailed Research Documents -->
+        <div class="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h3 class="text-lg font-semibold text-blue-900 mb-3 text-center">📋 Detailed Research Documents</h3>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://docs.google.com/document/d/1hwLpRl7Q_0akMUoe5EPrSLj1-YHRGjN-XhZD53IyAWU/edit" 
+                   target="_blank" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                    🔍 Deep Research Report
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+                <a href="https://docs.google.com/document/d/1zriIMv_D3eDPaBGDvvki_qo2eTPKecsvXhseyZ_Ngzk/edit" 
+                   target="_blank" 
+                   class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-flex items-center gap-2 justify-center">
+                    📊 Full Analysis Report
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dimension cards will be dynamically inserted here -->
+        </div>
+
+        <div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-800 mb-3">Rating Key:</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm font-medium">
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-exceptional border border-exceptional"></span>
+                    <span class="text-exceptional font-semibold">Exceptional</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-competent border border-competent"></span>
+                    <span class="text-competent font-semibold">Competent</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-needs-improvement border border-needs-improvement"></span>
+                    <span class="text-needs-improvement font-semibold">Needs Improvement</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="block w-5 h-5 rounded-full bg-critical border border-critical"></span>
+                    <span class="text-critical font-semibold">Critical Gap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const dimensionRatings = [
+            { name: "Market Positioning & Messaging", rating: "Needs Improvement", file: "market-positioning-messaging-analysis.html" },
+            { name: "Buyer Journey Orchestration", rating: "Needs Improvement", file: "buyer-journey-orchestration-analysis.html" },
+            { name: "Market Presence & Visibility", rating: "Needs Improvement", file: "market-presence-visibility-analysis.html" },
+            { name: "Audience Clarity & Segmentation", rating: "Needs Improvement", file: "audience-clarity-segmentation-analysis.html" },
+            { name: "Digital Experience Effectiveness", rating: "Needs Improvement", file: "digital-experience-effectiveness-analysis.html" },
+            { name: "Competitive Positioning & Defense", rating: "Needs Improvement", file: "competitive-positioning-defense-analysis.html" },
+            { name: "Brand & Message Consistency", rating: "Competent", file: "brand-message-consistency-analysis.html" },
+            { name: "Analytics & Measurement Framework", rating: "Needs Improvement", file: "analytics-measurement-framework-analysis.html" },
+            { name: "Evaluation of AI-Specific Authenticity", rating: "Needs Improvement", file: "evaluation-of-ai-specific-authenticity-analysis.html" }
+        ];
+
+        const cardsContainer = document.querySelector('.grid');
+
+        function getCardClasses(rating) {
+            switch (rating) {
+                case 'Exceptional': return 'bg-exceptional border-exceptional text-exceptional';
+                case 'Competent': return 'bg-competent border-competent text-competent';
+                case 'Needs Improvement': return 'bg-needs-improvement border-needs-improvement text-needs-improvement';
+                case 'Critical Gap': return 'bg-critical border-critical text-critical';
+                default: return 'bg-gray-100 border-gray-300 text-gray-700';
+            }
+        }
+
+
+        dimensionRatings.forEach(dimension => {
+            const card = document.createElement('div');
+            card.className = `rating-card ${getCardClasses(dimension.rating)}`;
+            card.innerHTML = `
+                <h3 class="text-xl font-semibold mb-2">${dimension.name}</h3>
+                <p class="text-lg font-bold mb-4">Rating: ${dimension.rating}</p>
+                <a href="${dimension.file}" class="bg-gray-800 hover:bg-gray-900 text-white text-sm font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200 inline-block">
+                    View Details →
+                </a>
+            `;
+
+            cardsContainer.appendChild(card);
+        });
+
+    </script>
+</body>
+</html>

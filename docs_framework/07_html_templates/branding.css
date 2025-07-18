@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&family=Outfit:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f6f6f6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.gold-underline {
+    text-decoration: underline;
+    text-decoration-color: #e5a819;
+    text-decoration-thickness: 3px;
+}
+
+.bg-dark-green { background-color: #224f41; }
+.text-dark-green { color: #224f41; }
+
+.bg-light-green { background-color: #e5ecea; }
+.text-light-green { color: #e5ecea; }
+
+.bg-primary-blue { background-color: #0d71a9; }
+.text-primary-blue { color: #0d71a9; }
+
+.bg-light-blue { background-color: #e2eef5; }
+.text-light-blue { color: #e2eef5; }
+
+.bg-primary-gold { background-color: #e5a819; }
+.text-primary-gold { color: #e5a819; }
+
+.bg-light-gold { background-color: #faeed1; }
+.text-light-gold { color: #faeed1; }
+
+.bg-neutral-black { background-color: #060119; }
+.text-neutral-black { color: #060119; }
+
+.bg-neutral-light-grey { background-color: #f6f6f6; }
+.text-neutral-light-grey { color: #f6f6f6; }
+
+.text-white { color: #ffffff; }
+.text-black { color: #000000; }
